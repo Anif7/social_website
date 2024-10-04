@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-kha8tj4*bgjyp@q2q!*97zo35ptz8=m6@gm+&&y7ea5bnz6$_i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com','loalhost','127.0.0.1']
+ALLOWED_HOSTS = ['mysite.com','loalhost','127.0.0.1','e52c-106-51-101-186.ngrok-free.app']
 
 
 # Application definition
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'django_extensions',
+    'images.apps.ImagesConfig',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
@@ -139,4 +141,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
     'social_core.backends.twitter.TwitterOAuth',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://e52c-106-51-101-186.ngrok-free.app',  # Replace with your actual ngrok URL
 ]
